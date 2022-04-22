@@ -178,6 +178,7 @@
 
                                 return false;}                    
                         }
+                        $_SESSION['id_pedido']=$id_pedido;
                         return true;
                 }else{
                                 return false;}
@@ -187,6 +188,62 @@
             }
             
         }
+
+        public function ver_ventas(){
+                
+                $query="SELECT ventas.*,envios.tipo FROM ventas INNER JOIN envios WHERE ventas.ID=envios.ID_Venta ";
+                $accion=$this->enlace_conexion->query($query);
+                return $accion;
+        }
+        public function ver_venta_usuario(){
+                
+                $query="SELECT * FROM ventas WHERE ID_Cliente='{$this->getIdUsuario()}'";
+                $accion=$this->enlace_conexion->query($query);
+                if ($accion) {
+                        //$accion=$accion->fetch_assoc();
+                        return $accion;
+                } else {
+                        return $this->enlace_conexion->error;
+                }
+        }
+
+        public function ver_1_venta(){
+                
+                $query="SELECT * FROM ventas WHERE ID='{$this->getId()}'";
+                $accion=$this->enlace_conexion->query($query);
+                if ($accion) {
+                        $accion=$accion->fetch_assoc();
+                        return $accion;
+                } else {
+                        return $this->enlace_conexion->error;
+                }
+        }
+
+
+        public function ver_lista_productos(){
+                
+                $query="SELECT v.ID,vp.*,p.* FROM ventas as v INNER JOIN venta_productos as vp INNER JOIN productos as p"
+                     . " WHERE v.ID=vp.ID_Venta AND vp.ID_Producto=p.ID AND v.ID='{$this->getId()}'";
+                $accion=$this->enlace_conexion->query($query);
+                if ($accion) {
+                        return $accion;
+                } else {
+                        return $this->enlace_conexion->error;
+                }
+
+        }
+
+        public function actualizar_estado(){
+                $query="UPDATE ventas SET Estado='{$this->getEstado()}' WHERE ID='{$this->getId()}'";
+                $accion=$this->enlace_conexion->query($query);
+                if ($accion) {
+                        return $accion;
+                } else {
+                        //return $this->enlace_conexion->error;
+                        return false;
+                }
+        }
+        
     }
 
 ?>

@@ -158,14 +158,14 @@
 
         public function guardar_datos(){
 
-            $query="INSERT INTO productos VALUE"
+            $query="INSERT INTO productos VALUE "
                  . "(NULL,'{$this->getCategoria()}','{$this->getNombre()}','{$this->getDescripcion()}','{$this->getStock()}'"
                  . ",'{$this->getPrecioUnitario()}','{$this->getImagen()}');";
             $accion=$this->enlace_conexion->query($query);
             if ($accion) {
                 return true;
             } else {
-                return false;
+                return $this->enlace_conexion->error;
             }  
 
         }
@@ -203,6 +203,27 @@
                     return false;
                 }      
             
+        }
+
+        public function registrar_categoria(){
+                $query="INSERT INTO categoria VALUE "
+                . "(NULL,'{$this->getCategoria()}');";
+                $accion=$this->enlace_conexion->query($query);
+                if ($accion) {
+                return true;
+                } else {
+                return false;
+                }      
+        }
+
+        public function mostrar_categorias(){
+                $query="SELECT * FROM categoria";
+                $accion=$this->enlace_conexion->query($query);
+                if ($accion) {
+                        return $accion;
+                } else {
+                        return false;
+                }     
         }
 
     }
