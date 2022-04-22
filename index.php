@@ -8,12 +8,17 @@
     if(isset ($_GET['controlador']) && isset ($_GET['accionar'])){
         
         $controlador=$_GET['controlador']."Control";
-        if (class_exists($controlador) && method_exists($controlador,$_GET['accionar'])) {
-
-            $accion=$_GET['accionar'];
-            $controlador= new $controlador();
-            $controlador->$accion();
-
+        if ( isset($controlador) && class_exists($controlador)) {
+            
+            $control= new $controlador();
+            if (method_exists($controlador,$_GET['accionar'])) {
+                $accion=$_GET['accionar'];
+                $control->$accion();
+            } else {
+                $error=new ErrorControl();
+                $error->index();
+            }
+            
         }else{
 
             $error=new ErrorControl();
@@ -25,8 +30,8 @@
     }elseif (!isset ($_GET['controlador']) && !isset($_GET['accionar'])){
 
         $controlador=inicio."Control";
-        $controlador= new $controlador();
-        $controlador->index();
+        $control= new $controlador();
+        $control->index();
 
     }else{
 
