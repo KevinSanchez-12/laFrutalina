@@ -65,8 +65,19 @@
                 $accion=$user->validar();
 
                 if ($accion) {
-                    $_SESSION['usuario']=$accion;
-                    header("Location: ".url_index."?controlador=Producto&accionar=index");
+                    if(!empty($accion['Rol']) && $accion['Rol']=='admin'){
+                        $_SESSION['admin']=$accion;
+                        if(isset($_SESSION['link_espera']) ){
+                            header($_SESSION['link_espera']);
+                        }else{
+                        header("Location: ".url_index."?controlador=Producto&accionar=index");}
+                    } else {
+                        $_SESSION['usuario']=$accion;
+                        if(isset($_SESSION['link_espera']) ){
+                            header($_SESSION['link_espera']);
+                        }else{
+                            header("Location: ".url_index."?controlador=Producto&accionar=index");}
+                    }
                 } else {
                     $_SESSION['mensaje']="ERROR INICIO DE SESION";
                     header("location: ".url_index."?controlador=Usuario&accionar=index");
