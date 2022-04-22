@@ -24,7 +24,7 @@
 <?php       
             echo " --------///////////------------- <br>"; }
     echo " --------/RESUMEN/-------------<br>";                          
-    echo "<a href= ".url_index."?controlador=Venta&accionar=registrar_compra> PAGAR </a><br>";
+    echo "<a href= ".url_index."?controlador=Compra&accionar=registrar_compra> PAGAR </a><br>";
 ?>
 
     <form action="<?=url_index?>index.php?controlador=Carrito&accionar=funcion"  method="post">
