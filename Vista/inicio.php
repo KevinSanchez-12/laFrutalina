@@ -1,3 +1,7 @@
+<section>
+    <p>aqui va el slider</p>
+</section>
+
 <div class="app-content">
     <div class="bg-anti-flash-white">
         <div class="white-container">
