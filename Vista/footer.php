@@ -13,7 +13,7 @@
                             <span>Jirón Sepúlveda 339, San Vicente de Cañete 15703</span></div>
                         <div class="outer-footer__text-wrap"><i class="fas fa-phone-volume"></i>
 
-                            <span>(+51) </span></div>
+                            <span>(+51) 961229039 </span></div>
                         <div class="outer-footer__text-wrap"><i class="far fa-envelope"></i>
 
                             <span>lafrutalina@gmail.com</span></div>
@@ -48,19 +48,19 @@
                                     <ul>
                                         <li>
 
-                                            <a href="cart.html">Cart</a></li>
+                                            <a href="cart.html">Categorias</a></li>
                                         <li>
 
-                                            <a href="dashboard.html">Account</a></li>
+                                            <a href="dashboard.html">Productos</a></li>
                                         <li>
 
-                                            <a href="shop-side-version-2.html">Manufacturer</a></li>
+                                            <a href="shop-side-version-2.html">Recomendaciones</a></li>
                                         <li>
 
-                                            <a href="dash-payment-option.html">Finance</a></li>
+                                            <a href="dash-payment-option.html">Promociones</a></li>
                                         <li>
 
-                                            <a href="shop-side-version-2.html">Shop</a></li>
+                                            <a href="shop-side-version-2.html">Combos</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -82,7 +82,7 @@
                                             <a href="index-2.html">Sedes</a></li>
                                         <li>
 
-                                            <a href="dash-my-order.html">Productos</a></li>
+                                            <a href="dash-my-order.html">Trabaja con nosotros</a></li>
                                         <li>
 
                                             <a href="shop-side-version-2.html">Carrito</a></li>
@@ -95,7 +95,7 @@
                 <div class="col-lg-4 col-md-12">
                     <div class="outer-footer__content">
                         <span class="outer-footer__content-title">La frutalina</span>
-                        <img src="./imagenes/logo.svg" alt="" style="width: 100px;">
+                        <img src="assets/images/logo.svg" alt="" style="width: 180px;">
                     </div>
                 </div>
             </div>
