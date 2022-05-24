@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="./assets/css/utility.css">
     <link rel="stylesheet" href="./assets/css/app.css">
     <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/slider.css">
     <link rel="stylesheet" href="./assets/css/card.css">
+    <link rel="stylesheet" href="./assets/css/category.css">
     <!-- import styles -->
 </head>
 
@@ -24,8 +26,8 @@
     <!-- loader -->
 
 
-    <!-- <div id="app">
-        <ul>
+    <div id="app">
+        <!-- <ul>
             <li><a href="<?=url_index?>">Inicio</a></li>
             <li><a href="<?=url_index?>index.php?controlador=carrito&accionar=index">Carrito</a></li>
             <?php if (GeneralControl::V_Sesion("usuario") || GeneralControl::V_Sesion("admin")) {
