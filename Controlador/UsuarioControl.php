@@ -79,7 +79,7 @@
                             header("Location: ".url_index."?controlador=Producto&accionar=index");}
                     }
                 } else {
-                    $_SESSION['mensaje']="ERROR INICIO DE SESION";
+                    $_SESSION['mensaje']="Datos incorrectos, vuelva a intentarlo";
                     header("location: ".url_index."?controlador=Usuario&accionar=index");
 
                 }
