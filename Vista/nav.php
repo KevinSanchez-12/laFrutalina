@@ -13,9 +13,10 @@
     <link rel="stylesheet" href="./assets/css/slider.css">
     <link rel="stylesheet" href="./assets/css/card.css">
     <link rel="stylesheet" href="./assets/css/category.css">
-    <title>FRUTALINA - Electronics, Apparel, Computers, Books, DVDs & more</title>
+    <title>FRUTALINA</title>
     <!-- import styles -->
 </head>
+
 <body class="config" id="js-scrollspy-trigger">
     <div class="preloader is-active">
         <div class="preloader__wrap">
@@ -68,7 +69,7 @@
 
                         <a class="main-logo" href="index-2.html">
 
-                            <img src="assets/images/logo.svg" alt="" style="width= 200px; height:80px ; "></a>
+                            <img src="assets/images/logo.svg" alt="" style="width: 200px; height:80px ; "></a>
                         <!--====== End - Main Logo ======-->
 
 
@@ -107,22 +108,22 @@
 
                                                 <a href="dashboard.html"><i class="fas fa-user-circle u-s-m-r-6"></i>
 
-                                                    <span>Account</span></a></li>
+                                                    <span>Cuenta</span></a></li>
                                             <li>
 
                                                 <a href="signup.html"><i class="fas fa-user-plus u-s-m-r-6"></i>
 
-                                                    <span>Signup</span></a></li>
+                                                    <span>inscribirse</span></a></li>
                                             <li>
 
                                                 <a href="signin.html"><i class="fas fa-lock u-s-m-r-6"></i>
 
-                                                    <span>Signin</span></a></li>
+                                                    <span>Iniciar sesión</span></a></li>
                                             <li>
 
                                                 <a href="signup.html"><i class="fas fa-lock-open u-s-m-r-6"></i>
 
-                                                    <span>Signout</span></a></li>
+                                                    <span>Salir</span></a></li>
                                         </ul>
                                         <!--====== End - Dropdown ======-->
                                     </li>
@@ -136,7 +137,7 @@
                                         <ul style="width:120px">
                                             <li class="has-dropdown has-dropdown--ul-right-100">
 
-                                                <a>Language<i class="fas fa-angle-down u-s-m-l-6"></i></a>
+                                                <a>Lenguaje<i class="fas fa-angle-down u-s-m-l-6"></i></a>
 
                                                 <!--====== Dropdown ======-->
 
@@ -144,22 +145,19 @@
                                                 <ul style="width:120px">
                                                     <li>
 
-                                                        <a class="u-c-brand">ENGLISH</a></li>
+                                                        <a class="u-c-brand">Español</a></li>
                                                     <li>
 
-                                                        <a>ARABIC</a></li>
+                                                        <a>Frances</a></li>
                                                     <li>
 
-                                                        <a>FRANCAIS</a></li>
-                                                    <li>
-
-                                                        <a>ESPANOL</a></li>
+                                                        <a>ENGLISH</a></li>
                                                 </ul>
                                                 <!--====== End - Dropdown ======-->
                                             </li>
                                             <li class="has-dropdown has-dropdown--ul-right-100">
 
-                                                <a>Currency<i class="fas fa-angle-down u-s-m-l-6"></i></a>
+                                                <a>Divisa<i class="fas fa-angle-down u-s-m-l-6"></i></a>
 
                                                 <!--====== Dropdown ======-->
 
@@ -167,23 +165,21 @@
                                                 <ul style="width:225px">
                                                     <li>
 
-                                                        <a class="u-c-brand">$ - US DOLLAR</a></li>
+                                                        <a class="u-c-brand">S/.Soles</a></li>
                                                     <li>
 
-                                                        <a>£ - BRITISH POUND STERLING</a></li>
-                                                    <li>
-
-                                                        <a>€ - EURO</a></li>
+                                                        <a>$ - US DOLLAR</a></li>
+                                                    
                                                 </ul>
                                                 <!--====== End - Dropdown ======-->
                                             </li>
                                         </ul>
                                         <!--====== End - Dropdown ======-->
                                     </li>
-                                    <li data-tooltip="tooltip" data-placement="left" title="Contact">
+                                    <li data-tooltip="tooltip" data-placement="left" title="Contacto">
 
                                         <a href="tel:+0900901904"><i class="fas fa-phone-volume"></i></a></li>
-                                    <li data-tooltip="tooltip" data-placement="left" title="Mail">
+                                    <li data-tooltip="tooltip" data-placement="left" title="E-Mail">
 
                                         <a href="mailto:contact@domain.com"><i class="far fa-envelope"></i></a></li>
                                 </ul>
@@ -956,7 +952,7 @@
                                 <ul class="ah-list ah-list--design2 ah-list--link-color-white">
                                     <li>
 
-                                        <a href="shop-side-version-2.html">INICIO</a></li>
+                                        <a href="<?= url_index ?>">INICIO</li>
                                     <li class="has-dropdown">
 
                                         <a>CATEGORIAS<i class="fas fa-angle-down u-s-m-l-6"></i></a>
@@ -1030,13 +1026,18 @@
                                         <ul style="width:170px">
                                             <li >
 
-                                                <a>Trabaja con nosotros</a>
+                                                <a href="./vista/trabajaconnosotros.php">Trabaja con nosotros</a>
+                                            </li>
+                                            <li >
+
+                                                <a href="./vista/Nosotros.php">Nosotros</a>
                                             </li>
                                         </ul>
                                         
+                                        
                                         <li class="has-dropdown">
 
-                                            <a>SEDES</a>
+                                            <a href="<?= url_index ?>vista/sedes.php?">SEDES</a>
                                         </li>
 
                                     
