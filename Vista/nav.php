@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="./assets/css/slider.css">
     <link rel="stylesheet" href="./assets/css/card.css">
     <link rel="stylesheet" href="./assets/css/category.css">
-    <title>FRUTALINA</title>
     <!-- import styles -->
 </head>
 
@@ -111,9 +110,9 @@
                                                     <span>Cuenta</span></a></li>
                                             <li>
 
-                                                <a href="signup.html"><i class="fas fa-user-plus u-s-m-r-6"></i>
+                                                <a href="<?= url_index ?>vista/registro.php?"><i class="fas fa-user-plus u-s-m-r-6"></i>
 
-                                                    <span>inscribirse</span></a></li>
+                                                    <span>Registrarse</span></a></li>
                                             <li>
 
                                                 <a href="signin.html"><i class="fas fa-lock u-s-m-r-6"></i>
