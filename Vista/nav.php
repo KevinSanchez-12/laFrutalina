@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./assets/css/vendor.css">
     <link rel="stylesheet" href="./assets/css/utility.css">
     <link rel="stylesheet" href="./assets/css/app.css">
+    <link rel="stylesheet" href="./assets/css/404.css">
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/slider.css">
     <link rel="stylesheet" href="./assets/css/card.css">

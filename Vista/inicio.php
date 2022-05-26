@@ -1,7 +1,4 @@
-<section>
-    <p>aqui va el slider</p>
-</section>
-
+<p>HOLA</p>
 <div class="app-content">
     <div class="bg-anti-flash-white">
         <div class="white-container">
@@ -119,7 +116,13 @@
                                                         S/ <?php echo $producto['Precio_und']?>
                                                     </span>
                                                     <span class="product-o2__action">
-                                                        <button class="nav-link btn btn--e-brand">Agregar a la bolsa</button>
+                                                        <button
+                                                            class="nav-link btn btn--e-brand"
+                                                            onclick="addToCart(
+                                                                <?php echo $producto['ID'] ?>,
+                                                                '<?php echo $producto['Nombre'] ?>',
+                                                                <?php echo $producto['Precio_und'] ?>)"
+                                                        >Agregar a la bolsa</button>
                                                     </span>
                                                 </div>
                                             </div>
@@ -213,6 +216,22 @@
         </div>
     </div>
 </div>
+
+<script>
+    const addToCart = async (id, nombre, precio, cantidad = 1) => {
+
+        const url = "<?=url_index?>index.php?controlador=Carrito&accionar=funcion"
+
+        const data = new FormData()
+        data.append('id', id)
+        data.append('nombre', nombre)
+        data.append('precio', precio)
+        data.append('cantidad', cantidad)
+        data.append('btnAccion', 'Agregar')
+        
+        const response = await axios.post(url, data)
+    }
+</script>
 
 <!-- <div class="col-3">
     <div class="card">
