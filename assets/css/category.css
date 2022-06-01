@@ -1,8 +1,0 @@
-.category-o a {
-	background: var(--color-red);
-	color: var(--color-light);
-}
-.category-o a:hover {
-	background: var(--color-mostaza);
-	color: var(--color-dark);
-}
