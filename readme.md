@@ -16,7 +16,7 @@ Los archivos de vista se encuentra comentadas para explicar su funcionalidad
 
 Se agrego la funcion busqueda que solo estara disponible en la vista inicio y allProductos
 
-Se agrego la funcionalidad de productos destacados en la pagina de inicio, solo con la condicion de debe haber productos destacados como minimo, de los contrario se mostrara la lista de productos
+Se agrego la funcionalidad de productos destacados en la pagina de inicio, solo con la condicion que debe haber 10 productos destacados como minimo, de lo contrario se mostrara la lista de productos
 
 Se mostrara la lista de productos en la vista allProductos
 
