@@ -379,6 +379,7 @@
                     </div>
                     <!--====== End - Secondary Nav ======-->
                     </div>
+                </div>
             </nav>
             <!--====== End - Nav 2 ======-->
         </header>

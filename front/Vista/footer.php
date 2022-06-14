@@ -94,7 +94,7 @@
                 </div>
                 <div class="col-lg-4 col-md-12">
                     <div class="outer-footer__content">
-                        <span class="outer-footer__content-title">La frutalina</span>
+                        
                         <img src="<?php echo url_index ?>/front/assets/images/logo.svg" alt="" style="width: 180px;">
                     </div>
                 </div>

@@ -42,7 +42,6 @@ custom-colors, box-mode, custom-header, custom-menu, custom-logo, featured-image
   20.3 Owl-Carousel
   20.4 jquery.scrollUp
   20.5 Slick Carousel
-
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 1.0 Base Styles
@@ -50,7 +49,7 @@ custom-colors, box-mode, custom-header, custom-menu, custom-logo, featured-image
 /**
  * Setup box-sizing
  */
-html {
+ html {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent; }
   html.boxed {
@@ -2049,6 +2048,9 @@ input::-ms-clear {
     margin-bottom: 10px; }
   .outer-footer__logo-wrap {
     margin-bottom: 4px; }
+  .outer-footer__content img{
+    margin-top: 50px;
+  }
   .outer-footer__text-wrap {
     margin-bottom: 6px; }
     .outer-footer__text-wrap > i {
@@ -6414,4 +6416,3 @@ input::-ms-clear {
 
 #js-product-detail-modal-thumbnail:hover .pt-prev, #js-product-detail-modal-thumbnail:hover .pt-next {
   opacity: .8; }
-
