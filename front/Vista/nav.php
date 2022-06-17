@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,6 +18,7 @@
     <title>FRUTALINA</title>
     <!-- import styles -->
 </head>
+
 <body class="config" id="js-scrollspy-trigger">
     <!-- <div class="preloader is-active">
         <div class="preloader__wrap">
@@ -26,8 +28,8 @@
 
     <!--====== Main App ======-->
     <div id="app">
-         
-        
+
+
         <!--====== Main Header ======-->
         <header class="header--style-2">
 
@@ -53,7 +55,8 @@
 
                             <input class="input-text input-text--border-radius input-text--style-2" type="text" id="main-search" placeholder="Search">
 
-                            <button class="btn btn--icon fas fa-search main-search-button" type="submit"></button></form>
+                            <button class="btn btn--icon fas fa-search main-search-button" type="submit"></button>
+                        </form>
                         <!--====== End - Search Form ======-->
 
 
@@ -81,22 +84,26 @@
 
                                                 <a href="dashboard.html"><i class="fas fa-user-circle u-s-m-r-6"></i>
 
-                                                    <span>Cuenta</span></a></li>
+                                                    <span>Cuenta</span></a>
+                                            </li>
                                             <li>
 
                                                 <a href="signup.html"><i class="fas fa-user-plus u-s-m-r-6"></i>
 
-                                                    <span>inscribirse</span></a></li>
+                                                    <span>inscribirse</span></a>
+                                            </li>
                                             <li>
 
                                                 <a href="signin.html"><i class="fas fa-lock u-s-m-r-6"></i>
 
-                                                    <span>Iniciar sesión</span></a></li>
+                                                    <span>Iniciar sesión</span></a>
+                                            </li>
                                             <li>
 
                                                 <a href="signup.html"><i class="fas fa-lock-open u-s-m-r-6"></i>
 
-                                                    <span>Salir</span></a></li>
+                                                    <span>Salir</span></a>
+                                            </li>
                                         </ul>
                                         <!--====== End - Dropdown ======-->
                                     </li>
@@ -118,13 +125,16 @@
                                                 <ul style="width:120px">
                                                     <li>
 
-                                                        <a class="u-c-brand">Español</a></li>
+                                                        <a class="u-c-brand">Español</a>
+                                                    </li>
                                                     <li>
 
-                                                        <a>Frances</a></li>
+                                                        <a>Frances</a>
+                                                    </li>
                                                     <li>
 
-                                                        <a>ENGLISH</a></li>
+                                                        <a>ENGLISH</a>
+                                                    </li>
                                                 </ul>
                                                 <!--====== End - Dropdown ======-->
                                             </li>
@@ -138,11 +148,13 @@
                                                 <ul style="width:225px">
                                                     <li>
 
-                                                        <a class="u-c-brand">S/.Soles</a></li>
+                                                        <a class="u-c-brand">S/.Soles</a>
+                                                    </li>
                                                     <li>
 
-                                                        <a>$ - US DOLLAR</a></li>
-                                                    
+                                                        <a>$ - US DOLLAR</a>
+                                                    </li>
+
                                                 </ul>
                                                 <!--====== End - Dropdown ======-->
                                             </li>
@@ -151,10 +163,12 @@
                                     </li>
                                     <li data-tooltip="tooltip" data-placement="left" title="Contacto">
 
-                                        <a href="tel:+0900901904"><i class="fas fa-phone-volume"></i></a></li>
+                                        <a href="tel:+0900901904"><i class="fas fa-phone-volume"></i></a>
+                                    </li>
                                     <li data-tooltip="tooltip" data-placement="left" title="E-Mail">
 
-                                        <a href="mailto:contact@domain.com"><i class="far fa-envelope"></i></a></li>
+                                        <a href="mailto:contact@domain.com"><i class="far fa-envelope"></i></a>
+                                    </li>
                                 </ul>
                                 <!--====== End - List ======-->
                             </div>
@@ -191,7 +205,7 @@
 
                                         <span class="mega-text">M</span>======-->
 
-                                    
+
 
 
 
@@ -217,7 +231,8 @@
                                 <ul class="ah-list ah-list--design2 ah-list--link-color-white">
                                     <li>
 
-                                        <a href="<?= url_index ?>">INICIO</li>
+                                        <a href="<?= url_index ?>">INICIO
+                                    </li>
                                     <li class="has-dropdown">
 
                                         <a>CATEGORIAS<i class="fas fa-angle-down u-s-m-l-6"></i></a>
@@ -226,86 +241,108 @@
 
                                         <span class="js-menu-toggle"></span>
                                         <ul style="width:170px">
-                                            <li >
-
-                                                <a href="cart.html">Clasicos</a></li>
-                                               
-                                            <li>
-                                                <a href="cart.html">Citricos</a></li>
-                                                
-                                            <li>
-                                                <a href="cart.html">Tropicales</a></li>
-
-                                            <li>
-                                                <a href="cart.html">Batidos</a></li>
-
-                                            <li>
-                                                <a href="cart.html">Frozen</a></li>
-                                                
-                                            <li>
-                                                <a href="cart.html">Detox</a></li>
                                             <li>
 
-                                                <a href="cart.html">Mix 2 frutas</a></li>
+                                                <a href="cart.html">Clasicos</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="cart.html">Citricos</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="cart.html">Tropicales</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="cart.html">Batidos</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="cart.html">Frozen</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="cart.html">Detox</a>
+                                            </li>
                                             <li>
 
-                                                <a href="wishlist.html">Extactos</a></li>
+                                                <a href="cart.html">Mix 2 frutas</a>
+                                            </li>
                                             <li>
 
-                                                <a href="checkout.html">Especiales</a></li>
+                                                <a href="wishlist.html">Extactos</a>
+                                            </li>
                                             <li>
 
-                                                <a href="faq.html">Fruti Ensalada</a></li>
+                                                <a href="checkout.html">Especiales</a>
+                                            </li>
                                             <li>
 
-                                                <a href="about.html">Antojitos</a></li>
+                                                <a href="faq.html">Fruti Ensalada</a>
+                                            </li>
                                             <li>
 
-                                                <a href="contact.html">Sandwiches</a></li>
+                                                <a href="about.html">Antojitos</a>
+                                            </li>
                                             <li>
 
-                                                <a href="404.html">Tortas</a></li>
+                                                <a href="contact.html">Sandwiches</a>
+                                            </li>
                                             <li>
 
-                                                <a href="404.html">Hamburguesas</a></li>
+                                                <a href="404.html">Tortas</a>
+                                            </li>
                                             <li>
 
-                                                <a href="404.html">Salchipapas</a></li>
+                                                <a href="404.html">Hamburguesas</a>
+                                            </li>
                                             <li>
 
-                                                <a href="404.html">Fruti Helados</a></li>
+                                                <a href="404.html">Salchipapas</a>
+                                            </li>
                                             <li>
 
-                                                <a href="404.html">Extras</a></li>
+                                                <a href="404.html">Fruti Helados</a>
+                                            </li>
                                             <li>
 
-                                                <a href="404.html">Desayunos</a></li>
+                                                <a href="404.html">Extras</a>
+                                            </li>
+                                            <li>
+
+                                                <a href="404.html">Desayunos</a>
+                                            </li>
                                         </ul>
                                         <!--====== End - Dropdown ======-->
                                     </li>
-                                   
+
                                     <li class="has-dropdown">
 
                                         <a>NOSOTROS<i class="fas fa-angle-down u-s-m-l-6"></i></a>
-                                       
+
                                         <ul style="width:170px">
-                                            <li >
+                                            <li>
 
                                                 <a href="./vista/trabajaconnosotros.php">Trabaja con nosotros</a>
                                             </li>
-                                            <li >
+                                            <li>
 
                                                 <a href="./vista/Nosotros.php">Nosotros</a>
                                             </li>
                                         </ul>
-                                        
-                                        
-                                        <li class="has-dropdown">
 
-                                            <a href="<?= url_index ?>vista/sedes.php?">SEDES</a>
-                                        </li>
 
-                                    
+                                    <li class="has-dropdown">
+
+                                        <a href="<?= url_index ?>vista/sedes.php?">SEDES</a>
+                                    </li>
+                                    <li class="has-dropdown">
+
+                                        <a href="<?=url_index?>index.php?controlador=producto&accionar=allProductos">PRODUCTOS</a>
+                                    </li>
+
+
                                 </ul>
                                 <!--====== End - List ======-->
                             </div>
@@ -330,7 +367,8 @@
                                 <ul class="ah-list ah-list--design1 ah-list--link-color-white">
                                     <li>
 
-                                        <a href="index-2.html"><i class="fas fa-home u-c-brand"></i></a></li>
+                                        <a href="index-2.html"><i class="fas fa-home u-c-brand"></i></a>
+                                    </li>
                                     <li>
 
                                         <!-- CORAZON <a href="wishlist.html"><i class="far fa-heart"></i></a></li> -->
@@ -345,7 +383,7 @@
                                         <span class="js-menu-toggle"></span>
                                         <div class="mini-cart">
 
-                                           
+
 
                                             <!--====== Mini Product Statistics ======-->
                                             <div class="mini-product-stat">
@@ -353,12 +391,14 @@
 
                                                     <span class="subtotal-text">TOTAL</span>
 
-                                                    <span class="subtotal-value">S/.16</span></div>
+                                                    <span class="subtotal-value">S/.16</span>
+                                                </div>
                                                 <div class="mini-action">
 
                                                     <a class="mini-link btn--e-brand-b-2" href="checkout.html">PROCEED TO CHECKOUT</a>
 
-                                                    <a class="mini-link btn--e-transparent-secondary-b-2" href="cart.html">VIEW CART</a></div>
+                                                    <a class="mini-link btn--e-transparent-secondary-b-2" href="cart.html">VIEW CART</a>
+                                                </div>
                                             </div>
                                             <!--====== End - Mini Product Statistics ======-->
                                         </div>
@@ -372,22 +412,17 @@
 
 
 
-                        
+
                         <!--====== End - Dropdown Main plugin ======-->
 
 
                     </div>
                     <!--====== End - Secondary Nav ======-->
-                    </div>
                 </div>
-            </nav>
-            <!--====== End - Nav 2 ======-->
-        </header>
-        <!--====== End - Main Header ======-->
+    </div>
+    </nav>
+    <!--====== End - Nav 2 ======-->
+    </header>
+    <!--====== End - Main Header ======-->
     </div>
 </body>
-
-    
-    
-
-        
