@@ -1,3 +1,5 @@
+
+
 <?php
 
     // Comprueba si existe una sesion mensaje, que contenga algun mensaje

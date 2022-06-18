@@ -82,25 +82,25 @@
                                         <ul style="width:120px">
                                             <li>
 
-                                                <a href="dashboard.html"><i class="fas fa-user-circle u-s-m-r-6"></i>
+                                                <a href=""><i class="fas fa-user-circle u-s-m-r-6"></i>
 
                                                     <span>Cuenta</span></a>
                                             </li>
                                             <li>
 
-                                                <a href="signup.html"><i class="fas fa-user-plus u-s-m-r-6"></i>
+                                                <a href="<?=url_index?>index.php?controlador=Usuario&accionar=registro"><i class="fas fa-user-plus u-s-m-r-6"></i>
 
-                                                    <span>inscribirse</span></a>
+                                                    <span>Registrarse</span></a>
                                             </li>
                                             <li>
 
-                                                <a href="signin.html"><i class="fas fa-lock u-s-m-r-6"></i>
+                                                <a href="<?=url_index?>index.php?controlador=usuario&accionar=logeo"><i class="fas fa-lock u-s-m-r-6"></i>
 
                                                     <span>Iniciar sesión</span></a>
                                             </li>
                                             <li>
 
-                                                <a href="signup.html"><i class="fas fa-lock-open u-s-m-r-6"></i>
+                                                <a href="#"><i class="fas fa-lock-open u-s-m-r-6"></i>
 
                                                     <span>Salir</span></a>
                                             </li>
@@ -367,14 +367,15 @@
                                 <ul class="ah-list ah-list--design1 ah-list--link-color-white">
                                     <li>
 
-                                        <a href="index-2.html"><i class="fas fa-home u-c-brand"></i></a>
+                                        <a href="<?= url_index ?>""><i class="fas fa-home u-c-brand"></i></a>
+                                        
                                     </li>
                                     <li>
 
                                         <!-- CORAZON <a href="wishlist.html"><i class="far fa-heart"></i></a></li> -->
                                     <li class="has-dropdown">
 
-                                        <a class="mini-cart-shop-link"><i class="fas fa-shopping-bag"></i>
+                                        <a href="<?=url_index?>index.php?controlador=producto&accionar=carrito"  class="mini-cart-shop-link"><i class="fas fa-shopping-bag"></i>
 
                                             <span class="total-item-round">2</span></a>
 

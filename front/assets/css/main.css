@@ -62,3 +62,7 @@
 	border-color: var(--color-red);
 	color: var(--color-red);
 }
+.face{
+	color: #fff;
+	text-decoration: none !important;
+}
