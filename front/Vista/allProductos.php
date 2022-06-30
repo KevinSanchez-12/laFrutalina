@@ -1,76 +1,1087 @@
-<?php
-    // Comprueba si existe una lista para mostrar
-        if (isset($lista)) {
-            //Comprueba si hay un mensaje a mostrar
-            if(isset($mensaje)){
-                echo "<h1>".$mensaje."</h1> ";
-            }
-            // Se declara la variable iteracion para asignarlo en los nombres de los id de cada producto cargado
-            $iteracion=0;
-            ?>
-            <!--Campo de entrada para buscar-->
-            <input type="text" id="formulario" >
-            <!--Div que contendra los productos cargado, no esta referenciado por ningun script-->
-            <div id="lista_productos">
-                <!--Div referenciado por el script busqueda para mostrar un mensaje-->
-                <div id="mensaje"></div>
-                <?php
-                //Se cargan los productos de la lista por medio de un foreach
-                foreach($lista as $producto) { ?>
-                    <!-- El div producto no debe contener una etiqueta style, debe ser referenciado 
-                            por la clase y en un archivo aparte css-->
-                    <div class="col-3" id="producto<?=$iteracion?>">
-                        <div class="card">
-                            <img height="317px" title="<?php echo $producto['Nombre']?>" class="card-img-top" src="<?php echo $producto['Imagen']?>" alt="<?php echo $producto['Nombre']?>">
-                            <div class="card-body">
-                                <span id="nombre<?=$iteracion?>"><?php echo $producto['Nombre']?></span>
-                                <h5 class="card-title">S/ <?php echo $producto['Precio_und']?></h5>
-                                
-                                <!--Se valida si hay stock del producto-->
-                                <?php if (intval($producto['Cantidad'])>0) { ?>
+<!--====== Main App ======-->
+<div id="app">
 
-                                <!--Formulario con entradas con valores ocultas, para enviar datos del producto de manera seguracion
-                                    por medio de un formulario con el metodo oculto post-->
-                                <form action="<?=url_index?>index.php?controlador=Carrito&accionar=funcion"  method="post">
+<!--====== Main Header ======-->
+<header>
+</header>
+<!--====== End - Main Header ======-->
 
-                                    <input type="hidden" name="id" id="id" value="<?php echo openssl_encrypt(intval($producto['ID']),COD,KEY);?>">
-                                    <input type="hidden" name="nombre" id="nombre" value="<?php echo openssl_encrypt($producto['Nombre'],COD,KEY);?>">
-                                    <input type="hidden" name="precio" id="precio" value="<?php echo openssl_encrypt($producto['Precio_und'],COD,KEY);?>">
-                                    <input type="hidden" name="cantidad" id="cantidad" value="<?php echo openssl_encrypt(1,COD,KEY);?>">
 
-                                    <button class="btn btn-primary" name="btnAccion" value="Agregar" type="submit">Agregar al carrito</button>
-                                </form>
-                                
-                                <?php } else{
-                                    echo "<button class='btn btn-primary' type='button' disabled>Sin Stock</button>";
-                                }?>
+<!--====== App Content ======-->
+<div class="app-content">
 
-                                <!--Formulario con valor id del producto oculto, que se enviara al controlador ver_detalles, para la
-                                    ver detalles del producto-->
-                                <form action="<?=url_index?>index.php?controlador=Producto&accionar=ver_detalles"  method="post">
+    <!--====== Section 1 ======-->
+    <div class="u-s-p-y-90">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-12">
+                    <div class="shop-w-master">
+                        <h1 class="shop-w-master__heading u-s-m-b-30"><i class="fas fa-filter u-s-m-r-8"></i>
 
-                                    <input type="hidden" name="id" id="id" value="<?php echo openssl_encrypt(intval($producto['ID']),COD,KEY);?>">
-                                    
-                                    <button class="btn btn-primary" name="btnAccion" value="Agregar" type="submit">Ver detalles</button>
-                                
-                                </form>
+                            <span>FILTROS</span></h1>
+                        <div class="shop-w-master__sidebar">
+                            <div class="u-s-m-b-30">
+                                <div class="shop-w shop-w--style">
+                                    <div class="shop-w__intro-wrap">
+                                        <h1 class="shop-w__h">CATEGORIA</h1>
 
+                                        <span class="fas fa-minus shop-w__toggle" data-target="#s-category" data-toggle="collapse"></span>
+                                    </div>
+ <!--======MODIFICAR ======-->
+                                    <div class="shop-w__wrap collapse show" id="s-category">
+                                        <ul class="shop-w__category-list gl-scroll">
+                                            <li class="has-list">
+
+                                                <a href="#">JUGOS</a>
+
+                                                <span class="category-list__text u-s-m-l-6">(100)</span>
+
+                                                <span class="js-shop-category-span is-expanded fas fa-plus u-s-m-l-6"></span>
+                                                <ul style="display:block">
+                                                    <li class="has-list">
+
+                                                        <a href="#">3D Printer & Supplies</a>
+
+                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                        <ul>
+                                                            <li>
+
+                                                                <a href="#">3d Printer</a></li>
+                                                            <li>
+
+                                                                <a href="#">3d Printing Pen</a></li>
+                                                            <li>
+
+                                                                <a href="#">3d Printing Accessories</a></li>
+                                                            <li>
+
+                                                                <a href="#">3d Printer Module Board</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-list">
+
+                                                        <a href="#">Home Audio & Video</a>
+
+                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                        <ul>
+                                                            <li>
+
+                                                                <a href="#">TV Boxes</a></li>
+                                                            <li>
+
+                                                                <a href="#">TV Receiver & Accessories</a></li>
+                                                            <li>
+
+                                                                <a href="#">3d Printing Accessories</a></li>
+                                                            <li>
+
+                                                                <a href="#">3d Printer Module Board</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-list">
+
+                                                        <a href="#">Media Players</a>
+
+                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                        <ul>
+                                                            <li>
+
+                                                                <a href="#">Earphones</a></li>
+                                                            <li>
+
+                                                                <a href="#">Mp3 Players</a></li>
+                                                            <li>
+
+                                                                <a href="#">Speakers & Radios</a></li>
+                                                            <li>
+
+                                                                <a href="#">Microphones</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-list">
+
+                                                        <a href="#">Video Game Accessories</a>
+
+                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                        <ul>
+                                                            <li>
+
+                                                                <a href="#">Nintendo Video Games Accessories</a></li>
+                                                            <li>
+
+                                                                <a href="#">Sony Video Games Accessories</a></li>
+                                                            <li>
+
+                                                                <a href="#">Xbox Video Games Accessories</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-list">
+
+                                                        <a href="#">Security & Protection</a>
+
+                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                        <ul>
+                                                            <li>
+
+                                                                <a href="#">Security Cameras</a></li>
+                                                            <li>
+
+                                                                <a href="#">Alarm System</a></li>
+                                                            <li>
+
+                                                                <a href="#">Security Gadgets</a></li>
+                                                            <li>
+
+                                                                <a href="#">CCTV Security Accessories</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-list">
+
+                                                        <a href="#">Home Audio & Video</a>
+
+                                                        <span class="js-shop-category-span is-expanded fas fa-plus u-s-m-l-6"></span>
+                                                        <ul style="display:block">
+                                                            <li>
+
+                                                                <a href="#">TV Boxes</a></li>
+                                                            <li>
+
+                                                                <a href="#">TV Receiver & Accessories</a></li>
+                                                            <li>
+
+                                                                <a href="#">3d Printing Accessories</a></li>
+                                                            <li>
+
+                                                                <a href="#">3d Printer Module Board</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-list">
+
+                                                        <a href="#">Photography & Camera</a>
+
+                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                        <ul>
+                                                            <li>
+
+                                                                <a href="#">Digital Cameras</a></li>
+                                                            <li>
+
+                                                                <a href="#">Sport Camera & Accessories</a></li>
+                                                            <li>
+
+                                                                <a href="#">Camera Accessories</a></li>
+                                                            <li>
+
+                                                                <a href="#">Lenses & Accessories</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-list">
+
+                                                        <a href="#">Arduino Compatible</a>
+
+                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                        <ul>
+                                                            <li>
+
+                                                                <a href="#">Raspberry Pi & Orange Pi</a></li>
+                                                            <li>
+
+                                                                <a href="#">Module Board</a></li>
+                                                            <li>
+
+                                                                <a href="#">Smart Robot</a></li>
+                                                            <li>
+
+                                                                <a href="#">Board Kits</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-list">
+
+                                                        <a href="#">DSLR Camera</a>
+
+                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                        <ul>
+                                                            <li>
+
+                                                                <a href="#">Nikon Camera</a></li>
+                                                            <li>
+
+                                                                <a href="#">Canon Camera</a></li>
+                                                            <li>
+
+                                                                <a href="#">Sony Camera</a></li>
+                                                            <li>
+
+                                                                <a href="#">DSLR Lenses</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-list">
+
+                                                        <a href="#">Necessary Accessories</a>
+
+                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                        <ul>
+                                                            <li>
+
+                                                                <a href="#">Flash Cards</a></li>
+                                                            <li>
+
+                                                                <a href="#">Memory Cards</a></li>
+                                                            <li>
+
+                                                                <a href="#">Flash Pins</a></li>
+                                                            <li>
+
+                                                                <a href="#">Compact Discs</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="has-list">
+
+                                                <a href="#">Women's Clothing</a>
+
+                                                <span class="category-list__text u-s-m-l-6">(5)</span>
+
+                                                <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                <ul>
+                                                    <li class="has-list">
+
+                                                        <a href="#">Hot Categories</a>
+
+                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                        <ul>
+                                                            <li>
+
+                                                                <a href="#">Dresses</a></li>
+                                                            <li>
+
+                                                                <a href="#">Blouses & Shirts</a></li>
+                                                            <li>
+
+                                                                <a href="#">T-shirts</a></li>
+                                                            <li>
+
+                                                                <a href="#">Rompers</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-list">
+
+                                                        <a href="#">Intimates</a>
+
+                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                        <ul>
+                                                            <li>
+
+                                                                <a href="#">Bras</a></li>
+                                                            <li>
+
+                                                                <a href="#">Brief Sets</a></li>
+                                                            <li>
+
+                                                                <a href="#">Bustiers & Corsets</a></li>
+                                                            <li>
+
+                                                                <a href="#">Panties</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-list">
+
+                                                        <a href="#">Wedding & Events</a>
+
+                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                        <ul>
+                                                            <li>
+
+                                                                <a href="#">Wedding Dresses</a></li>
+                                                            <li>
+
+                                                                <a href="#">Evening Dresses</a></li>
+                                                            <li>
+
+                                                                <a href="#">Prom Dresses</a></li>
+                                                            <li>
+
+                                                                <a href="#">Flower Dresses</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-list">
+
+                                                        <a href="#">Bottoms</a>
+
+                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                        <ul>
+                                                            <li>
+
+                                                                <a href="#">Skirts</a></li>
+                                                            <li>
+
+                                                                <a href="#">Shorts</a></li>
+                                                            <li>
+
+                                                                <a href="#">Leggings</a></li>
+                                                            <li>
+
+                                                                <a href="#">Jeans</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-list">
+
+                                                        <a href="#">Outwear</a>
+
+                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                        <ul>
+                                                            <li>
+
+                                                                <a href="#">Blazers</a></li>
+                                                            <li>
+
+                                                                <a href="#">Basic Jackets</a></li>
+                                                            <li>
+
+                                                                <a href="#">Trench</a></li>
+                                                            <li>
+
+                                                                <a href="#">Leather & Suede</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-list">
+
+                                                        <a href="#">Jackets</a>
+
+                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                        <ul>
+                                                            <li>
+
+                                                                <a href="#">Denim Jackets</a></li>
+                                                            <li>
+
+                                                                <a href="#">Trucker Jackets</a></li>
+                                                            <li>
+
+                                                                <a href="#">Windbreaker Jackets</a></li>
+                                                            <li>
+
+                                                                <a href="#">Leather Jackets</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-list">
+
+                                                        <a href="#">Accessories</a>
+
+                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                        <ul>
+                                                            <li>
+
+                                                                <a href="#">Tech Accessories</a></li>
+                                                            <li>
+
+                                                                <a href="#">Headwear</a></li>
+                                                            <li>
+
+                                                                <a href="#">Baseball Caps</a></li>
+                                                            <li>
+
+                                                                <a href="#">Belts</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-list">
+
+                                                        <a href="#">Other Accessories</a>
+
+                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                        <ul>
+                                                            <li>
+
+                                                                <a href="#">Bags</a></li>
+                                                            <li>
+
+                                                                <a href="#">Wallets</a></li>
+                                                            <li>
+
+                                                                <a href="#">Watches</a></li>
+                                                            <li>
+
+                                                                <a href="#">Sunglasses</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="has-list">
+
+                                                <a href="#">Men's Clothing</a>
+
+                                                <span class="category-list__text u-s-m-l-6">(5)</span>
+
+                                                <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                <ul>
+                                                    <li class="has-list">
+
+                                                        <a href="#">Hot Sale</a>
+
+                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                        <ul>
+                                                            <li>
+
+                                                                <a href="#">T-Shirts</a></li>
+                                                            <li>
+
+                                                                <a href="#">Tank Tops</a></li>
+                                                            <li>
+
+                                                                <a href="#">Polo</a></li>
+                                                            <li>
+
+                                                                <a href="#">Shirts</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-list">
+
+                                                        <a href="#">Outwear</a>
+
+                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                        <ul>
+                                                            <li>
+
+                                                                <a href="#">Hoodies</a></li>
+                                                            <li>
+
+                                                                <a href="#">Trench</a></li>
+                                                            <li>
+
+                                                                <a href="#">Parkas</a></li>
+                                                            <li>
+
+                                                                <a href="#">Sweaters</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-list">
+
+                                                        <a href="#">Bottoms</a>
+
+                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                        <ul>
+                                                            <li>
+
+                                                                <a href="#">Casual Pants</a></li>
+                                                            <li>
+
+                                                                <a href="#">Cargo Pants</a></li>
+                                                            <li>
+
+                                                                <a href="#">Jeans</a></li>
+                                                            <li>
+
+                                                                <a href="#">Shorts</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-list">
+
+                                                        <a href="#">Underwear</a>
+
+                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                        <ul>
+                                                            <li>
+
+                                                                <a href="#">Boxers</a></li>
+                                                            <li>
+
+                                                                <a href="#">Briefs</a></li>
+                                                            <li>
+
+                                                                <a href="#">Robes</a></li>
+                                                            <li>
+
+                                                                <a href="#">Socks</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-list">
+
+                                                        <a href="#">Jackets</a>
+
+                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                        <ul>
+                                                            <li>
+
+                                                                <a href="#">Denim Jackets</a></li>
+                                                            <li>
+
+                                                                <a href="#">Trucker Jackets</a></li>
+                                                            <li>
+
+                                                                <a href="#">Windbreaker Jackets</a></li>
+                                                            <li>
+
+                                                                <a href="#">Leather Jackets</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-list">
+
+                                                        <a href="#">Sunglasses</a>
+
+                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                        <ul>
+                                                            <li>
+
+                                                                <a href="#">Pilot</a></li>
+                                                            <li>
+
+                                                                <a href="#">Wayfarer</a></li>
+                                                            <li>
+
+                                                                <a href="#">Square</a></li>
+                                                            <li>
+
+                                                                <a href="#">Round</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-list">
+
+                                                        <a href="#">Accessories</a>
+
+                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                        <ul>
+                                                            <li>
+
+                                                                <a href="#">Eyewear Frames</a></li>
+                                                            <li>
+
+                                                                <a href="#">Scarves</a></li>
+                                                            <li>
+
+                                                                <a href="#">Hats</a></li>
+                                                            <li>
+
+                                                                <a href="#">Belts</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-list">
+
+                                                        <a href="#">Other Accessories</a>
+
+                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
+                                                        <ul>
+                                                            <li>
+
+                                                                <a href="#">Bags</a></li>
+                                                            <li>
+
+                                                                <a href="#">Wallets</a></li>
+                                                            <li>
+
+                                                                <a href="#">Watches</a></li>
+                                                            <li>
+
+                                                                <a href="#">Tech Accessories</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+
+                                                <a href="#">Food & Supplies</a>
+
+                                                <span class="category-list__text u-s-m-l-6">(0)</span></li>
+                                            <li>
+
+                                                <a href="#">Furniture & Decor</a>
+
+                                                <span class="category-list__text u-s-m-l-6">(0)</span></li>
+                                            <li>
+
+                                                <a href="#">Sports & Game</a>
+
+                                                <span class="category-list__text u-s-m-l-6">(0)</span></li>
+                                            <li>
+
+                                                <a href="#">Beauty & Health</a>
+
+                                                <span class="category-list__text u-s-m-l-6">(0)</span></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
                             </div>
+    
+                            <div class="u-s-m-b-30">
+                               
+                            </div>
+
+
+                            <div class="u-s-m-b-30">
+                                <div class="shop-w shop-w--style">
+                                    <div class="shop-w__intro-wrap">
+                                        <h1 class="shop-w__h">ENVIO</h1>
+
+                                        <span class="fas fa-minus shop-w__toggle" data-target="#s-shipping" data-toggle="collapse"></span>
+                                    </div>
+                                    <div class="shop-w__wrap collapse show" id="s-shipping">
+                                        <ul class="shop-w__list gl-scroll">
+                                            <li>
+
+                                                <!--====== Check Box ======-->
+                                                <div class="check-box">
+
+                                                    <input type="checkbox" id="free-shipping">
+                                                    <div class="check-box__state check-box__state--primary">
+
+                                                        <label class="check-box__label" for="free-shipping">Envio Gratis</label></div>
+                                                </div>
+                                                <!--====== End - Check Box ======-->
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="u-s-m-b-30">
+                                <div class="shop-w shop-w--style">
+                                    <div class="shop-w__intro-wrap">
+                                        <h1 class="shop-w__h">PRECIO</h1>
+
+                                        <span class="fas fa-minus shop-w__toggle" data-target="#s-price" data-toggle="collapse"></span>
+                                    </div>
+                                    <div class="shop-w__wrap collapse show" id="s-price">
+                                        <form class="shop-w__form-p">
+                                            <div class="shop-w__form-p-wrap">
+                                                <div>
+
+                                                    <label for="price-min"></label>
+
+                                                    <input class="input-text input-text--primary-style" type="text" id="price-min" placeholder="Min"></div>
+                                                <div>
+
+                                                    <label for="price-max"></label>
+
+                                                    <input class="input-text input-text--primary-style" type="text" id="price-max" placeholder="Max"></div>
+                                                <div>
+
+                                                    <button class="btn btn--icon fas fa-angle-right btn--e-transparent-platinum-b-2" type="submit"></button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            
+            
                         </div>
                     </div>
-                <?php 
-                
-                $iteracion++;  } ?>
+                </div>
+                <div class="col-lg-9 col-md-12">
+                    <div class="shop-p">
+                        <div class="shop-p__toolbar u-s-m-b-30">
+                            <div class="shop-p__meta-wrap u-s-m-b-60">
+
+                                <span class="shop-p__meta-text-1">ENCONTRADO 100 RESULTADOS</span>
+                                <div class="shop-p__meta-text-2">
+
+                                    <span>Busquedas Relacionadas:</span>
+
+                                    <a class="gl-tag btn--e-brand-shadow" href="#">Antojitos</a>
+
+                                    <a class="gl-tag btn--e-brand-shadow" href="#">Jugos</a>
+
+                                    <a class="gl-tag btn--e-brand-shadow" href="#">Salchipapas</a></div>
+                            </div>
+                            <div class="shop-p__tool-style">
+                                <div class="tool-style__group u-s-m-b-8">
+
+                                    <span class="js-shop-grid-target is-active">Cuadricula</span>
+
+                                    <span class="js-shop-list-target">Lista</span></div>
+ <!--====== MODIFICAR ======-->  
+                                <!--====== <form>
+                                    <div class="tool-style__form-wrap">
+                                        <div class="u-s-m-b-8"><select class="select-box select-box--transparent-b-2">
+                                                <option>Mostrar: 8</option>
+                                                <option selected>Mostrar: 12</option>
+                                                <option>Mostra: 16</option>
+                                                <option>Mostrar: 28</option>
+                                            </select></div>
+                                        <div class="u-s-m-b-8"><select class="select-box select-box--transparent-b-2">
+                                                <option selected>Ordenar por Articulos mas nuevos</option>
+                                                <option>Sort By: Latest Items</option>
+                                                <option>Sort By: Best Selling</option>
+                                                <option>Sort By: Best Rating</option>
+                                                <option>Sort By: Lowest Price</option>
+                                                <option>Sort By: Highest Price</option>
+                                            </select></div>
+                                    </div>
+                                </form>======--> 
+                            </div>
+                        </div>
+                        <?php
+                            // Comprueba si existe una lista para mostrar
+                                if (isset($lista)) {
+                                    //Comprueba si hay un mensaje a mostrar
+                                    if(isset($mensaje)){
+                                        echo "<h1>".$mensaje."</h1> ";
+                                    }
+                                    // Se declara la variable iteracion para asignarlo en los nombres de los id de cada producto cargado
+                                    $iteracion=0;
+                                    ?>
+                                    <!--Campo de entrada para buscar-->
+                                        <input type="text" id="formulario" >
+                                        <!--Div que contendra los productos cargado, no esta referenciado por ningun script-->
+                                        <div id="lista_productos">
+                                            <!--Div referenciado por el script busqueda para mostrar un mensaje-->
+                                            <div id="mensaje"></div>
+                                            <?php
+                                                //Se cargan los productos de la lista por medio de un foreach
+                                                foreach($lista as $producto) { ?>
+                                                    <!-- El div producto no debe contener una etiqueta style, debe ser referenciado 
+                                                            por la clase y en un archivo aparte css-->
+                                          
+                            <div class="shop-p__collection">
+                                <div class="row is-grid-active">
+                                    <div class="col-lg-4 col-md-6 col-sm-6">
+                                        <div class="product-m">
+                                            <div class="product-m__thumb" id="producto<?=$iteracion?>">
+
+                                                <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
+                                                    <img class="aspect__img" height="317px" title="<?php echo $producto['Nombre']?>" src="<?php echo $producto['Imagen']?>" alt="<?php echo $producto['Nombre']?>">
+                                                </a>
+                                                <div class="product-m__quick-look">
+
+                                                    <a class="fas fa-search" data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Quick Look"></a></div>
+                                                <div class="product-m__add-cart">
+
+                                                    <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Add to Cart</a></div>
+                                            </div>
+                                            <div class="product-m__content">
+                                                <div class="product-m__category" >
+
+                                                    <a href="shop-side-version-2.html">Categorias</a></div>
+                                                <div class="product-m__name">
+
+                                                    <span id="nombre<?=$iteracion?>"><?php echo $producto['Nombre']?></span></div>
+                                                <div class="product-m__rating gl-rating-style"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+
+                                                    <span class="product-m__review">(23)</span></div>
+                                                    <div class="product-m__price">S/ <?php echo $producto['Precio_und']?></div>
+                                                <div class="product-m__hover">
+                                                    <!-- <div class="product-m__preview-description">
+
+                                                        </div> -->
+                                                    <div class="product-m__wishlist">
+
+                                                        <a class="far fa-heart" href="#" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"></a></div>
+                                                </div><!--Se valida si hay stock del producto-->
+                                                <?php if (intval($producto['Cantidad'])>0) { ?>
+
+                                                <!--Formulario con entradas con valores ocultas, para enviar datos del producto de manera seguracion
+                                                    por medio de un formulario con el metodo oculto post-->
+                                                <form action="<?=url_index?>index.php?controlador=Carrito&accionar=funcion"  method="post">
+
+                                                    <input type="hidden" name="id" id="id" value="<?php echo openssl_encrypt(intval($producto['ID']),COD,KEY);?>">
+                                                    <input type="hidden" name="nombre" id="nombre" value="<?php echo openssl_encrypt($producto['Nombre'],COD,KEY);?>">
+                                                    <input type="hidden" name="precio" id="precio" value="<?php echo openssl_encrypt($producto['Precio_und'],COD,KEY);?>">
+                                                    <input type="hidden" name="cantidad" id="cantidad" value="<?php echo openssl_encrypt(1,COD,KEY);?>">
+
+                                                    <button class="btn btn-primary" name="btnAccion" value="Agregar" type="submit">Agregar al carrito</button>
+                                                </form>
+                                                
+                                                <?php } else{
+                                                    echo "<button class='btn btn-primary' type='button' disabled>Sin Stock</button>";
+                                                }?>
+                                                <!--Formulario con valor id del producto oculto, que se enviara al controlador ver_detalles, para la
+                                                ver detalles del producto-->
+                                                <form action="<?=url_index?>index.php?controlador=Producto&accionar=ver_detalles"  method="post">
+
+                                                    <input type="hidden" name="id" id="id" value="<?php echo openssl_encrypt(intval($producto['ID']),COD,KEY);?>">
+
+                                                    <button class="btn btn-primary" name="btnAccion" value="Agregar" type="submit">Ver detalles</button>
+
+                                                </form>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <?php 
+                                        
+                                $iteracion++;  } ?>
+                                    </div>
+                                    <!--Input referenciado por el script busqueda, para leer el total de productos cargados-->
+                                    <input type="hidden" id="tproductos" value="<?php echo $iteracion?>">
+                                    <!-- Se carga el script busqueda-->
+                                    <script src="front/js/busqueda.js"></script>
+                                    
+                            <?php
+                                    
+                                } else {
+                                    echo "<h1> No hay una lista</h1>";
+                                }
+                                
+                            ?>
+                        <div class="u-s-p-y-60">
+
+                            <!--====== Pagination ======-->
+                            <ul class="shop-p__pagination">
+                                <li class="is-active">
+
+                                    <a href="shop-side-version-2.html">1</a></li>
+                                <li>
+
+                                    <a href="shop-side-version-2.html">2</a></li>
+                                <li>
+
+                                    <a href="shop-side-version-2.html">3</a></li>
+                                <li>
+
+                                    <a href="shop-side-version-2.html">4</a></li>
+                                <li>
+
+                                    <a class="fas fa-angle-right" href="shop-side-version-2.html"></a></li>
+                            </ul>
+                            <!--====== End - Pagination ======-->
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!--Input referenciado por el script busqueda, para leer el total de productos cargados-->
-            <input type="hidden" id="tproductos" value="<?php echo $iteracion?>">
-            <!-- Se carga el script busqueda-->
-            <script src="front/js/busqueda.js"></script>
-            
-<?php
-            
-        } else {
-            echo "<h1> No hay una lista</h1>";
-        }
-        
-?>
+        </div>
+    </div>
+    <!--====== End - Section 1 ======-->
+</div>
+<!--====== End - App Content ======-->
+
+
+
+
+
+<!--====== Quick Look Modal ======-->
+<div class="modal fade" id="quick-look">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal--shadow">
+
+            <button class="btn dismiss-button fas fa-times" type="button" data-dismiss="modal"></button>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-5">
+
+                        <!--====== Product Breadcrumb ======-->
+                        <div class="pd-breadcrumb u-s-m-b-30">
+                            <ul class="pd-breadcrumb__list">
+                                <li class="has-separator">
+
+                                    <a href="index.hml">Home</a></li>
+                                <li class="has-separator">
+
+                                    <a href="shop-side-version-2.html">Electronics</a></li>
+                                <li class="has-separator">
+
+                                    <a href="shop-side-version-2.html">DSLR Cameras</a></li>
+                                <li class="is-marked">
+
+                                    <a href="shop-side-version-2.html">Nikon Cameras</a></li>
+                            </ul>
+                        </div>
+                        <!--====== End - Product Breadcrumb ======-->
+
+
+                        <!--====== Product Detail ======-->
+                        <div class="pd u-s-m-b-30">
+                            <div class="pd-wrap">
+                                <div id="js-product-detail-modal">
+                                    <div>
+
+                                        <img class="u-img-fluid" src="images/product/product-d-1.jpg" alt=""></div>
+                                    <div>
+
+                                        <img class="u-img-fluid" src="images/product/product-d-2.jpg" alt=""></div>
+                                    <div>
+
+                                        <img class="u-img-fluid" src="images/product/product-d-3.jpg" alt=""></div>
+                                    <div>
+
+                                        <img class="u-img-fluid" src="images/product/product-d-4.jpg" alt=""></div>
+                                    <div>
+
+                                        <img class="u-img-fluid" src="images/product/product-d-5.jpg" alt=""></div>
+                                </div>
+                            </div>
+                            <div class="u-s-m-t-15">
+                                <div id="js-product-detail-modal-thumbnail">
+                                    <div>
+
+                                        <img class="u-img-fluid" src="images/product/product-d-1.jpg" alt=""></div>
+                                    <div>
+
+                                        <img class="u-img-fluid" src="images/product/product-d-2.jpg" alt=""></div>
+                                    <div>
+
+                                        <img class="u-img-fluid" src="images/product/product-d-3.jpg" alt=""></div>
+                                    <div>
+
+                                        <img class="u-img-fluid" src="images/product/product-d-4.jpg" alt=""></div>
+                                    <div>
+
+                                        <img class="u-img-fluid" src="images/product/product-d-5.jpg" alt=""></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--====== End - Product Detail ======-->
+                    </div>
+                    <div class="col-lg-7">
+
+                        <!--====== Product Right Side Details ======-->
+                        <div class="pd-detail">
+                            <div>
+
+                                <span class="pd-detail__name">Nikon Camera 4k Lens Zoom Pro</span></div>
+                            <div>
+                                <div class="pd-detail__inline">
+
+                                    <span class="pd-detail__price">$6.99</span>
+
+                                    <span class="pd-detail__discount">(76% OFF)</span><del class="pd-detail__del">$28.97</del></div>
+                            </div>
+                            <div class="u-s-m-b-15">
+                                <div class="pd-detail__rating gl-rating-style"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+
+                                    <span class="pd-detail__review u-s-m-l-4">
+
+                                        <a href="product-detail.html">23 Reviews</a></span></div>
+                            </div>
+                            <div class="u-s-m-b-15">
+                                <div class="pd-detail__inline">
+
+                                    <span class="pd-detail__stock">200 in stock</span>
+
+                                    <span class="pd-detail__left">Only 2 left</span></div>
+                            </div>
+                            <div class="u-s-m-b-15">
+
+                                <span class="pd-detail__preview-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span></div>
+                            <div class="u-s-m-b-15">
+                                <div class="pd-detail__inline">
+
+                                    <span class="pd-detail__click-wrap"><i class="far fa-heart u-s-m-r-6"></i>
+
+                                        <a href="signin.html">Add to Wishlist</a>
+
+                                        <span class="pd-detail__click-count">(222)</span></span></div>
+                            </div>
+                            <div class="u-s-m-b-15">
+                                <div class="pd-detail__inline">
+
+                                    <span class="pd-detail__click-wrap"><i class="far fa-envelope u-s-m-r-6"></i>
+
+                                        <a href="signin.html">Email me When the price drops</a>
+
+                                        <span class="pd-detail__click-count">(20)</span></span></div>
+                            </div>
+                            <div class="u-s-m-b-15">
+                                <ul class="pd-social-list">
+                                    <li>
+
+                                        <a class="s-fb--color-hover" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li>
+
+                                        <a class="s-tw--color-hover" href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li>
+
+                                        <a class="s-insta--color-hover" href="#"><i class="fab fa-instagram"></i></a></li>
+                                    <li>
+
+                                        <a class="s-wa--color-hover" href="#"><i class="fab fa-whatsapp"></i></a></li>
+                                    <li>
+
+                                        <a class="s-gplus--color-hover" href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="u-s-m-b-15">
+                                <form class="pd-detail__form">
+                                    <div class="pd-detail-inline-2">
+                                        <div class="u-s-m-b-15">
+
+                                            <!--====== Input Counter ======-->
+                                            <div class="input-counter">
+
+                                                <span class="input-counter__minus fas fa-minus"></span>
+
+                                                <input class="input-counter__text input-counter--text-primary-style" type="text" value="1" data-min="1" data-max="1000">
+
+                                                <span class="input-counter__plus fas fa-plus"></span></div>
+                                            <!--====== End - Input Counter ======-->
+                                        </div>
+                                        <div class="u-s-m-b-15">
+
+                                            <button class="btn btn--e-brand-b-2" type="submit">Add to Cart</button></div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="u-s-m-b-15">
+
+                                <span class="pd-detail__label u-s-m-b-8">Product Policy:</span>
+                                <ul class="pd-detail__policy-list">
+                                    <li><i class="fas fa-check-circle u-s-m-r-8"></i>
+
+                                        <span>Buyer Protection.</span></li>
+                                    <li><i class="fas fa-check-circle u-s-m-r-8"></i>
+
+                                        <span>Full Refund if you don't receive your order.</span></li>
+                                    <li><i class="fas fa-check-circle u-s-m-r-8"></i>
+
+                                        <span>Returns accepted if product not as described.</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--====== End - Product Right Side Details ======-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--====== End - Quick Look Modal ======-->
+
+
+
+<!--====== End - Modal Section ======-->
+</div>
+<!--====== End - Main App ======-->
+
+
+<!--====== Google Analytics: change UA-XXXXX-Y to be your site's ID ======-->
+<script>
+window.ga = function() {
+    ga.q.push(arguments)
+};
+ga.q = [];
+ga.l = +new Date;
+ga('create', 'UA-XXXXX-Y', 'auto');
+ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+<!--====== Vendor Js ======-->
+<script src="<?php echo url_index ?>/front/assets/js/vendor.js"></script>
+
+<!--====== jQuery Shopnav plugin ======-->
+<script src="<?php echo url_index ?>/front/assets/js/jquery.shopnav.js"></script>
+
+<!--====== App ======-->
+<script src="<?php echo url_index ?>/front/assets/js/app.js"></script>
+
+<!--====== Noscript ======-->
+<noscript>
+<div class="app-setting">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="app-setting__wrap">
+                    <h1 class="app-setting__h1">JavaScript is disabled in your browser.</h1>
+
+                    <span class="app-setting__text">Please enable JavaScript in your browser or upgrade to a JavaScript-capable browser.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</noscript>
+</body>
+</html>

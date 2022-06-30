@@ -1,3 +1,4 @@
+
 <?php
     // Verifica si hay datos a mostrar
     if (isset($mis_compras) && $mis_compras) {

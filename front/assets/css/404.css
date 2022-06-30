@@ -1,0 +1,6 @@
+.section__content.section__error .empty__big-text {
+	color: var(--color-red);
+}
+.section__content.section__error a {
+	background: var(--color-red);
+}

@@ -1,6 +1,6 @@
 
 <body>
-    <h1>TITULO</h1>
+    <h1>TITULO </h1>
     <?php
         //Verifica si existe un mensaje a mostrar
         if (isset($notificacion)) {
@@ -9,6 +9,7 @@
     ?>
     <!--Formulario de logeo del usuario
         Falta validar que la contraseña tenga caracteres alfanumericos y simbolos-->
+    
     <form action="<?=url_index?>index.php?controlador=usuario&accionar=verificar" method="POST">
         <label><strong>Correo</strong></label> <br>
         <input type="email" placeholder="Ingrese su correo" name="email"> <br>
