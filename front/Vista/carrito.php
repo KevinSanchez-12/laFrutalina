@@ -36,7 +36,37 @@
     </form>
 <?php
     }else{
-        echo "<h1> Carrito Vacio</h1>";
-        echo "<h2> Compre algunos productos</h2>";
+        echo "<div class='app-content'>
+        <div class='u-s-p-y-60'>
+            <div class='section__intro u-s-m-b-40'>
+                <div class='container'>
+                    <div class='row'>
+                        <div class='col-lg-12'>
+                            <div class='section__text-wrap'>
+                                <h2 class='section__heading u-c-secondary'>¡Su carrito esta vacio!</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class='u-s-p-y-60'>
+            <div class='container'>
+                <div class='row'>
+                    <div class='col-lg-12 col-md-12 u-s-m-b-30'>
+                        <div class='empty'>
+                            <div class='empty__wrap'>
+                                <span class='empty__text-1'>Vea los productos que tenemos para Ud y elija lo que más le guste.</span>
+    
+                                <a class='empty__redirect-link btn--e-brand' href='index.php'>Ver productos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>";
+        
     }
 ?>

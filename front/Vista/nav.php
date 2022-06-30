@@ -94,7 +94,7 @@
                                             </li>
                                             <li>
 
-                                                <a href="<?=url_index?>index.php?controlador=usuario&accionar=logeo"><i class="fas fa-lock u-s-m-r-6"></i>
+                                                <a href="<?=url_index?>index.php?controlador=usuario&accionar=index"><i class="fas fa-lock u-s-m-r-6"></i>
 
                                                     <span>Iniciar sesión</span></a>
                                             </li>
@@ -375,7 +375,7 @@
                                         <!-- CORAZON <a href="wishlist.html"><i class="far fa-heart"></i></a></li> -->
                                     <li class="has-dropdown">
 
-                                        <a href="<?=url_index?>index.php?controlador=producto&accionar=carrito"  class="mini-cart-shop-link"><i class="fas fa-shopping-bag"></i>
+                                        <a href="#"  class="mini-cart-shop-link"><i class="fas fa-shopping-bag"></i>
 
                                             <span class="total-item-round">2</span></a>
 
@@ -398,7 +398,7 @@
 
                                                     <a class="mini-link btn--e-brand-b-2" href="checkout.html">PROCEED TO CHECKOUT</a>
 
-                                                    <a class="mini-link btn--e-transparent-secondary-b-2" href="cart.html">VIEW CART</a>
+                                                    <a class="mini-link btn--e-transparent-secondary-b-2" href="<?=url_index?>index.php?controlador=carrito&accionar=index">VIEW CART</a>
                                                 </div>
                                             </div>
                                             <!--====== End - Mini Product Statistics ======-->
