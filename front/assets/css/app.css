@@ -2997,6 +2997,20 @@ input::-ms-clear {
   padding: 16px;
   font-weight: 600;
   font-size: 13px; }
+.title1{
+  color: #333333;
+  font-size: 18px;
+  margin-bottom: 8px;
+  margin: auto;
+  justify-content: center;
+  display: flex;
+  margin-top: 15px;
+}
+.btnC{
+  margin: auto;
+  justify-content: center;
+  display: flex;
+}
 
 @media (max-width: 991px) {
   .w-r__wrap-2 {
