@@ -91,7 +91,7 @@
                                 <div class="u-s-m-b-15">
 
                                     <button class="gl-s-api__btn gl-s-api__btn--fb" type="button"><i class="fab fa-facebook-f"></i>
-                                        <a href="https://web.facebook.com/" class="Face">
+                                        <a href="https://es-la.facebook.com/" class="Face">
                                         <span>Iniciar con facebook</span></button></div>
                                         </a>
                                 <div class="u-s-m-b-30">

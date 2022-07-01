@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="<?php echo url_index ?>/front/assets/css/slider.css">
     <link rel="stylesheet" href="<?php echo url_index ?>/front/assets/css/card.css">
     <link rel="stylesheet" href="<?php echo url_index ?>/front/assets/css/category.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <title>FRUTALINA</title>
     <!-- import styles -->
 </head>
@@ -53,7 +54,7 @@
 
                             <label for="main-search"></label>
 
-                            <input class="input-text input-text--border-radius input-text--style-2" type="text" id="main-search" placeholder="Search">
+                            <input class="input-text input-text--border-radius input-text--style-2" type="text" id="main-search" placeholder="Buscar Producto">
 
                             <button class="btn btn--icon fas fa-search main-search-button" type="submit"></button>
                         </form>
@@ -82,7 +83,7 @@
                                         <ul style="width:120px">
                                             <li>
 
-                                                <a href=""><i class="fas fa-user-circle u-s-m-r-6"></i>
+                                                <a href="<?=url_index?>index.php?controlador=compra&accionar=index""><i class="fas fa-user-circle u-s-m-r-6"></i>
 
                                                     <span>Cuenta</span></a>
                                             </li>
@@ -100,7 +101,7 @@
                                             </li>
                                             <li>
 
-                                                <a href="#"><i class="fas fa-lock-open u-s-m-r-6"></i>
+                                                <a href =" <?= url_index ?> index.php?controlador=usuario&accionar=cerrar_sesion "><i class="fas fa-lock-open u-s-m-r-6"></i>
 
                                                     <span>Salir</span></a>
                                             </li>
@@ -365,19 +366,18 @@
 
                                 <!--====== List ======-->
                                 <ul class="ah-list ah-list--design1 ah-list--link-color-white">
-                                    <li>
+                                    <li >
 
                                         <a href="<?= url_index ?>""><i class="fas fa-home u-c-brand"></i></a>
                                         
                                     </li>
-                                    <li>
-
-                                        <!-- CORAZON <a href="wishlist.html"><i class="far fa-heart"></i></a></li> -->
+                                    <!-- CORAZON <a href="wishlist.html"><i class="far fa-heart"></i></a></li> -->
                                     <li class="has-dropdown">
 
-                                        <a href="#"  class="mini-cart-shop-link"><i class="fas fa-shopping-bag"></i>
-
-                                            <span class="total-item-round">2</span></a>
+                                        <a href="#"  class="mini-cart-shop-link"><i class="bi bi-cart-check"></i>
+                                       
+                                       
+                                          
 
                                         <!--====== Dropdown ======-->
 
@@ -392,13 +392,13 @@
 
                                                     <span class="subtotal-text">TOTAL</span>
 
-                                                    <span class="subtotal-value">S/.16</span>
+                                                    <span class="subtotal-value">S/.00</span>
                                                 </div>
                                                 <div class="mini-action">
 
-                                                    <a class="mini-link btn--e-brand-b-2" href="checkout.html">PROCEED TO CHECKOUT</a>
+                                                    <a class="mini-link btn--e-brand-b-2" href="checkout.html">Pasar a cancelar productos</a>
 
-                                                    <a class="mini-link btn--e-transparent-secondary-b-2" href="<?=url_index?>index.php?controlador=carrito&accionar=index">VIEW CART</a>
+                                                    <a class="mini-link btn--e-transparent-secondary-b-2" href="<?=url_index?>index.php?controlador=carrito&accionar=index">Ver carrito</a>
                                                 </div>
                                             </div>
                                             <!--====== End - Mini Product Statistics ======-->
@@ -406,7 +406,12 @@
                                         <!--====== End - Dropdown ======-->
                                     </li>
                                 </ul>
-                                <!--====== End - List ======-->
+                                                <!--====== End - List ======-->
+
+
+
+
+                                                
                             </div>
                             <!--====== End - Menu ======-->
                         </div>

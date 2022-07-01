@@ -24,3 +24,8 @@
 	background-position: center center;
 	background-blend-mode: darken;
 }
+
+.contenedor-icono i {
+	font-size: 100px !important;
+	color: FFFFFF;
+}

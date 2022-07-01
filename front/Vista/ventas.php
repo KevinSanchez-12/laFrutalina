@@ -1,3 +1,4 @@
+<h1>HOLA MUNDO</h1>
 <?php 
     //Verifica si hay un mensaje a mostrar
     if (isset($_SESSION['mensaje'])) {
